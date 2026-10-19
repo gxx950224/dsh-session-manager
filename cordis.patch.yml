@@ -1,0 +1,19 @@
+# dsh-session-manager 的 bundle patch：本包自带的 Loader 行。
+#
+# package.json 的 `dsh.bundle.patch` 指向本文件，使插件可被 DSH 的
+# 「添加插件 / plugin_manager install_bundle」正式安装——没有这一声明，
+# 安装器会以 `not-a-bundle`（"<name> declares no dsh.bundle"）拒绝。
+#
+# 行名必须是**裸包名**：dsh-client-modules 的 locatePkgJson() 只认精确包名，
+# 写成子路径（如 dsh-session-manager/client）会让 locatePkgJson 返回
+# undefined，浏览器半就不会被注册进 __DSH_BOOT__，设置页签不会出现。
+#
+# 本行同时挂载两个半边：
+#   - 宿主半  lib/index.js   → webServer 路由 /api/session-manager/*
+#   - 浏览器半 dist/client.js → settings.section 槽位（设置页签）
+#
+# 只需一行：一个声明了 dsh.client 的包只能有一个活跃 Loader 源，
+# 否则 client-modules 会以 "resolves from multiple active Loader sources" 报错。
+- insert:
+    - id: dsh-session-manager
+      name: 'dsh-session-manager'
