@@ -1,6 +1,6 @@
 {
-  "name": "dsh-session-manager",
-  "version": "0.1.0",
+  "name": "@gxx-labs/session-manager-dsh",
+  "version": "0.1.2",
   "description": "DSH 插件：设置 →「会话管理」页签，批量管理已归档会话（批量取消归档 / 批量归档 / 彻底删除会话及其磁盘文件）。UI 复用 DSH 设计令牌与 primitives。",
   "type": "module",
   "main": "lib/index.js",
@@ -88,5 +88,13 @@
         "react"
       ]
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gxx950224/dsh-session-manager.git"
+  },
+  "homepage": "https://github.com/gxx950224/dsh-session-manager#readme",
+  "bugs": {
+    "url": "https://github.com/gxx950224/dsh-session-manager/issues"
   }
 }

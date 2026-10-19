@@ -1,6 +1,6 @@
-/* dsh-session-manager client bundle (esbuild) */
+/* @gxx-labs/session-manager-dsh client bundle (esbuild) */
 window.__ModuleLoader__.load({
-  id: "dsh-session-manager",
+  id: "@gxx-labs/session-manager-dsh",
   factory: (require) => {
     var module = { exports: {} };
     var exports = module.exports;
@@ -854,7 +854,7 @@ var inject = ["slots", "workspaces", "sessions", "locale"];
 function apply(ctx) {
   const locale = ctx.locale ?? ctx.get("locale");
   if (locale !== void 0 && locale.register !== void 0) {
-    ctx.effect(() => locale.register(NS, { zh, en }), "dsh-session-manager: dictionaries");
+    ctx.effect(() => locale.register(NS, { zh, en }), "@gxx-labs/session-manager-dsh: dictionaries");
   }
   const t = (key) => {
     if (locale === void 0 || locale.bind === void 0) return zh[key] ?? key;
@@ -896,10 +896,10 @@ function apply(ctx) {
     )
   );
 }
-var __cssTagId = "dsh-session-manager/Sm.module.css";
+var __cssTagId = "@gxx-labs/session-manager-dsh/Sm.module.css";
 if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(__cssTagId) + "]") === null) {
   var __styleTag = document.createElement("style");
-  __styleTag.dataset.plugin = "dsh-session-manager";
+  __styleTag.dataset.plugin = "@gxx-labs/session-manager-dsh";
   __styleTag.dataset.pluginCss = __cssTagId;
   __styleTag.textContent = "/* client/Sm.module.css */\n.Sm_Sm_page {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  max-width: 760px;\n  color: var(--dsw-alias-label-primary);\n}\n.Sm_Sm_heading {\n  margin: 0;\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 26px;\n}\n.Sm_Sm_intro {\n  margin: 0;\n  font-size: 13px;\n  line-height: 20px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.Sm_Sm_toolbar {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 12px;\n}\n.Sm_Sm_search {\n  flex: 1 1 200px;\n  min-width: 0;\n  max-width: 280px;\n}\n.Sm_Sm_meta {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  min-height: 24px;\n}\n.Sm_Sm_count {\n  font-size: 12px;\n  line-height: 18px;\n  color: var(--dsw-alias-label-tertiary);\n  font-variant-numeric: tabular-nums;\n}\n.Sm_Sm_actions {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 0;\n  border-top: 0.5px solid var(--dsw-alias-border-l2);\n  border-bottom: 0.5px solid var(--dsw-alias-border-l2);\n}\n.Sm_Sm_hint {\n  font-size: 12px;\n  line-height: 18px;\n  color: var(--dsw-alias-label-caption);\n}\n.Sm_Sm_notice {\n  margin: 0;\n  font-size: 13px;\n  line-height: 20px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.Sm_Sm_error {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin: 0;\n  padding: 8px 12px;\n  border-radius: var(--dsw-radius-sm);\n  font-size: 12px;\n  line-height: 20px;\n  background: color-mix(in srgb, var(--dsw-alias-state-error-primary) 10%, transparent);\n  color: var(--dsw-alias-state-error-primary);\n}\n.Sm_Sm_empty {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 20px;\n  text-align: center;\n}\n.Sm_Sm_emptyTitle {\n  margin: 0 0 6px;\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 22px;\n  color: var(--dsw-alias-label-secondary);\n}\n.Sm_Sm_emptyText {\n  margin: 0;\n  max-width: 420px;\n  font-size: 13px;\n  line-height: 20px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.Sm_Sm_pager {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  gap: 8px 12px;\n  padding-top: 12px;\n  margin-top: 4px;\n  border-top: 0.5px solid var(--dsw-alias-border-l2);\n}\n.Sm_Sm_pageInfo {\n  font-size: 12px;\n  line-height: 18px;\n  color: var(--dsw-alias-label-tertiary);\n  font-variant-numeric: tabular-nums;\n}\n.Sm_Sm_list {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.Sm_Sm_row {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  min-width: 0;\n  min-height: 44px;\n  padding: 4px 8px;\n  border-radius: var(--dsw-radius-sm);\n}\n.Sm_Sm_row:hover {\n  background: var(--dsw-alias-interactive-bg-hover);\n}\n.Sm_Sm_rowFailed {\n  background: color-mix(in srgb, var(--dsw-alias-state-error-primary) 8%, transparent);\n}\n.Sm_Sm_rowMain {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  flex: 1;\n  min-width: 0;\n}\n.Sm_Sm_rowTitle {\n  font-size: 13px;\n  line-height: 20px;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.Sm_Sm_rowSub {\n  font-size: 12px;\n  line-height: 18px;\n  color: var(--dsw-alias-label-tertiary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.Sm_Sm_rowFail {\n  font-size: 12px;\n  line-height: 18px;\n  color: var(--dsw-alias-state-error-primary);\n}\n.Sm_Sm_rowTime {\n  flex: none;\n  font-size: 12px;\n  line-height: 18px;\n  color: var(--dsw-alias-label-tertiary);\n  font-variant-numeric: tabular-nums;\n}\n.Sm_Sm_confirmHead {\n  margin: 0 0 6px;\n  font-size: 12px;\n  font-weight: 500;\n  line-height: 18px;\n  color: var(--dsw-alias-label-secondary);\n}\n.Sm_Sm_paths {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  margin: 0 0 10px;\n  padding: 8px 10px;\n  max-height: 180px;\n  overflow: auto;\n  border: 0.5px solid var(--dsw-alias-border-l4);\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-bg-layer-1);\n  list-style: none;\n}\n.Sm_Sm_path {\n  font-size: 12px;\n  line-height: 18px;\n  color: var(--dsw-alias-label-secondary);\n  word-break: break-all;\n}\n.Sm_Sm_pathGone {\n  color: var(--dsw-alias-label-caption);\n  text-decoration: line-through;\n}\n.Sm_Sm_ack {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 13px;\n  line-height: 20px;\n  color: var(--dsw-alias-label-primary);\n  cursor: pointer;\n}\n.Sm_Sm_ack input {\n  flex: none;\n}\n@media (prefers-reduced-motion: reduce) {\n  .Sm_Sm_row {\n    transition: none;\n  }\n}\n\n/* .build-tmp/entry.css */\n";
   document.head.appendChild(__styleTag);
